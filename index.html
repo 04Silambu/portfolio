@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Silambarasan K - Resume</title>
+<style>
+    body {
+        margin: 0;
+        background: linear-gradient(135deg, #e8ecf5, #f7f9ff);
+        font-family: 'Segoe UI', Arial, sans-serif;
+    }
+
+    .resume {
+        width: 900px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 14px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 30px;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: .9s ease;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+    }
+
+    h1::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 3px;
+        background: #4a6cf7;
+        transition: width .5s;
+    }
+
+    .resume:hover h1::after {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-top: 20px;
+        padding-bottom: 4px;
+        border-bottom: 2px solid #4a6cf7;
+        color: #2d3a6b;
+    }
+
+    p, li {
+        font-size: 15px;
+        color: #333;
+        line-height: 1.55;
+    }
+
+    ul { padding-left: 20px; }
+
+    .section {
+        background: #f8faff;
+        padding: 12px 14px;
+        border-left: 4px solid #4a6cf7;
+        margin-top: 18px;
+        border-radius: 8px;
+        transition: .35s ease;
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    .section.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .section:hover {
+        box-shadow: 0 0 12px rgba(74,108,247,0.25);
+        transform: scale(1.01);
+    }
+
+    .right {
+        background: #f3f6fe;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.08);
+        opacity: 0;
+        transform: translateX(30px);
+        transition: .8s ease;
+    }
+
+    .right.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="resume" id="resume">
+
+    <!-- LEFT COLUMN -->
+    <div class="left">
+
+        <h1>Silambarasan K</h1>
+        <p>
+            Coimbatore, Tamil Nadu • 7094461662 <br>
+            kit27.amt52@gmail.com <br>
+            <b>LinkedIn</b> | <b>GitHub</b>
+        </p>
+
+        <div class="section">
+            <h2>Career Objective</h2>
+            <p>AIML student with strong ML and full-stack skills, seeking opportunities to apply technical knowledge in real-world projects.</p>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <p><b>Full Stack Intern — Ether Infotech</b></p>
+            <ul>
+                <li>Built MERN e-commerce system.</li>
+                <li>JWT authentication + admin dashboard.</li>
+                <li>Product filters, search, pagination & API optimization.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li><b>Fake Job Detection System</b> — ML + NLP fraud detection.</li>
+                <li><b>Smart Soldier IoT Monitor</b> — Vital tracking + alerts.</li>
+                <li><b>Tamil Nadu Explorer</b> — District search + REST APIs.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Research paper at ICCSS’25.</li>
+                <li>NCC IGC achiever.</li>
+                <li>State-level 3000m runner.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Volunteering</h2>
+            <ul>
+                <li>NCC event coordination & hosting.</li>
+                <li>Taught Java to juniors.</li>
+                <li>Organized technical symposium.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right" id="right">
+
+        <h2>Education</h2>
+        <p><b>B.E CSE (AI & ML)</b><br>KIT – Coimbatore (2023–2027)<br>CGPA: 7.1</p>
+
+        <h2>Technical Skills</h2>
+        <p><b>Programming:</b> Python, JavaScript, C, SQL</p>
+        <p><b>Web:</b> React, Node, Express, MongoDB, JWT,HTML,CSS,Node.js</p>
+        <p><b>Tools:</b> GitHub, VS Code, Jupyter</p>
+
+        <h2>Certifications</h2>
+        <ul>
+            <li>NPTEL — Design Thinking</li>
+            <li>Python Foundation</li>
+            <li>AI Foundation • IBM AI Fundamentals</li>
+            <li>Coursera AI (IBM)</li>
+        </ul>
+
+        <h2>Competitive Programming</h2>
+        <p><b>LeetCode:</b> 1416 rating | 250+ problems</p>
+        <p><b>CodeChef:</b> 1303 rating | 1★ | 181 problems</p>
+
+    </div>
+
+</div>
+
+<script>
+    window.onload = () => {
+        // Main fade-in
+        document.getElementById("resume").style.opacity = "1";
+        document.getElementById("resume").style.transform = "translateY(0)";
+
+        // Section animations
+        let sections = document.querySelectorAll(".section");
+        sections.forEach((sec, i) => {
+            setTimeout(() => sec.classList.add("visible"), i * 200);
+        });
+
+        // Right column fade
+        setTimeout(() => {
+            document.getElementById("right").classList.add("visible");
+        }, 600);
+    };
+</script>
+
+</body>
+</html>
